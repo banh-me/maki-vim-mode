@@ -22,7 +22,7 @@ Declare the package in your global `init.lua` (normally
 
 ```lua
 maki.pack.add({
-  "https://github.com/MrBanh/maki-vim-mode",
+  "https://github.com/banh-me/maki-vim-mode",
 })
 ```
 
@@ -31,7 +31,7 @@ Pin a release instead of tracking the default branch:
 ```lua
 maki.pack.add({
   {
-    src = "https://github.com/MrBanh/maki-vim-mode",
+    src = "https://github.com/banh-me/maki-vim-mode",
     version = "v0.1.0",
   },
 })
@@ -50,7 +50,7 @@ package owner, so `require` resolves inside the checkout):
 ```lua
 maki.pack.add({
   {
-    src = "https://github.com/MrBanh/maki-vim-mode",
+    src = "https://github.com/banh-me/maki-vim-mode",
     version = "v0.1.0",
     data = {
       module = "vim-mode",
