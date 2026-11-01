@@ -6,3 +6,7 @@
 [permissions]
 run = true
 fs_read = true
+input = true
+session_read = true
+agent = true
+session_write = true

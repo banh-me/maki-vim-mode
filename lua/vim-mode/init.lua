@@ -659,17 +659,18 @@ local function sync_bindings()
   want[TOGGLE_KEY] = { notation = TOGGLE_KEY, toggle = true }
   for notation in pairs(bound) do
     if want[notation] == nil then
-      maki.keymap.del("n", notation)
+      maki.keymap.del({ "n", "i" }, notation)
       bound[notation] = nil
     end
   end
   for notation, b in pairs(want) do
     if bound[notation] == nil then
       local h = handlers[notation]
-      maki.keymap.set("n", notation, h, { desc = "vim-mode" })
+      maki.keymap.set({ "n", "i" }, notation, h, { desc = "vim-mode" })
       bound[notation] = true
     end
   end
+  maki.ui.set_mode(enabled and state.mode ~= "insert" and "n" or "i")
 end
 
 -- Shared escape writer: delete the `seq` at seq_start (0-based byte offset),
